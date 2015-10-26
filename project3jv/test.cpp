@@ -43,3 +43,5 @@ void test_count_unknown_squares() {
 }
 
 // define more test functions here
+
+// this is also a test
