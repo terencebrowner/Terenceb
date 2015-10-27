@@ -20,9 +20,20 @@
 ///////////////////////////////////////
 
 int count_unknown_squares(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    // your code here
-    return 0;
+  // count for unknowns
+  int unknownCount = 0;
+  //must be less than max size and even interger 
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
+        if (board[i][j] == 0) {
+          unknownCount++;
+      }
+    }
+  }
+
+    return unknownCount;
 }
+
 
 
 ///////////////////////////////////////
@@ -46,7 +57,12 @@ bool col_has_no_threes_of_color(const int board[MAX_SIZE][MAX_SIZE],
 }
 
 bool board_has_no_threes(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    // your code here
+    int row1 = 0 ;
+    int row2 = 0 ;
+    if (size >= 0 && size <= MAX_SIZE && size % 2 == 0){
+
+    }
+
     return false;
 }
 
