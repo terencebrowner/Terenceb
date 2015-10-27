@@ -15,6 +15,8 @@
 #include "ohhi.h"
 
 void test_count_unknown_squares();
+void test_rows_are_different();
+void test_cols_are_different(); 
 
 // declare more test functions here
 
@@ -39,9 +41,32 @@ void test_count_unknown_squares() {
     read_board_from_string(board, test_board_1, size_1);
     cout << count_unknown_squares(board, size_1) << endl;
 
+     // test case 2
+    string test_board_2[] = {"-OX---",
+                             "OO--X-",
+                             "X-----",
+                             "-O--OO",
+                             "X-----",
+                             "------"};
+
+         int size_2 = 6;
+    read_board_from_string(board, test_board_2, size_2);
+    cout << count_unknown_squares(board, size_2) << endl;                        
+
+
     // add more tests here
 }
+void test_rows_are_different();
+ int board[MAX_SIZE][MAX_SIZE];
 
-// define more test functions here
+    // test case 1
+    string test_board_1[] = {"OOOX",
+                             "OO--",
+                             "XX--",
+                             "OO--"};
+    int size_1 = 4;
+    read_board_from_string(board, test_board_1, size_1);
+    cout << rows_are_different(board, size_1, row1, row2) << endl;
+
 
 // this is just a test to

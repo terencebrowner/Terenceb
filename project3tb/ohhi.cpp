@@ -59,27 +59,45 @@ bool col_has_no_threes_of_color(const int board[MAX_SIZE][MAX_SIZE],
 bool board_has_no_threes(const int board[MAX_SIZE][MAX_SIZE], int size) {
     int row1 = 0 ;
     int row2 = 0 ;
-    if (size >= 0 && size <= MAX_SIZE && size % 2 == 0){
-
-    }
-
-    return false;
-}
+    for (int i = 0; i < size; i++ ){
+        if ( !row_has_no_threes_of_color(board, size, i, RED) or 
+             !row_has_no_threes_of_color(board, size, i, BLUE) or
+             !col_has_no_threes_of_color(board, size, i, RED) or 
+             !col_has_no_threes_of_color(board, size, i , BLUE)){
+          return false;
+        }
+      }
+          {
+            return true;
+            }
+          }
+        
+    
 
 bool rows_are_different(const int board[MAX_SIZE][MAX_SIZE],
                         int size,
                         int row1,
                         int row2) {
-    // your code here
-    return false;
+  for (int i = 0; i < size; i++){
+    if (board[row1][i] == board[row2][i]) { 
+      return false; 
+    }
+  }
+  return true ;
 }
+
+  
 
 bool cols_are_different(const int board[MAX_SIZE][MAX_SIZE],
                         int size,
                         int col1,
                         int col2) {
-    // your code here
-    return false;
+      for (int i = 0; i < size; i++){
+    if (board[col1][i] == board[col2][i]) { 
+      return false; 
+    }
+  }
+  return true ;
 }
 
 bool board_has_no_duplicates(const int board[MAX_SIZE][MAX_SIZE], int size) {
