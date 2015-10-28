@@ -14,6 +14,8 @@
 #include <cctype>
 #include "utility.h"
 #include "ohhi.h"
+#include <cstdlib>
+
 
 ///////////////////////////////////////
 // UTILITY FUNCTIONS //////////////////
@@ -78,8 +80,8 @@ bool rows_are_different(const int board[MAX_SIZE][MAX_SIZE],
                         int size,
                         int row1,
                         int row2) {
-  for (int i = 0; i < size; i++){
-    if (board[row1][i] == board[row2][i]) { 
+  for (int column = 0; column < size; column++){
+    if (board[row1][column] == board[row2][column]) { 
       return false; 
     }
   }
@@ -93,7 +95,7 @@ bool cols_are_different(const int board[MAX_SIZE][MAX_SIZE],
                         int col1,
                         int col2) {
       for (int i = 0; i < size; i++){
-    if (board[col1][i] == board[col2][i]) { 
+    if (board[i][col1] == board[i][col2]) { 
       return false; 
     }
   }
@@ -145,14 +147,19 @@ void solve_balance_column(int board[MAX_SIZE][MAX_SIZE],
 ///////////////////////////////////////
 
 bool board_is_solved(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    // your code here
+    if (board_has_no_threes(board, size)== true && board_has_no_duplicates(board, size) == true && count_unknocheckwn_squares(board, size) == 0){
+      return true ;
+
+    }
     return false;
 }
 
 bool check_valid_input(int size, int row_input, char col_input,
-                       char color_char, int &row, int &col) {
-    // your code here
-    return false;
+                       char color_char, int &row, int &col)
+int columnInput = atoi(col_input) ;
+                        {
+if (row_input >= 1 && row_input < size &&     
+  return false;
 }
 
 bool check_valid_move(const int original_board[MAX_SIZE][MAX_SIZE],
