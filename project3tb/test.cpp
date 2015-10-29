@@ -17,11 +17,13 @@
 void test_count_unknown_squares();
 void test_rows_are_different();
 void test_cols_are_different(); 
+void check_valid_input() ;
 
 // declare more test functions here
 
 int main() {
     test_count_unknown_squares();
+    test_rows_are_different() ;
 
     // add calls to test functions here
 
@@ -56,17 +58,24 @@ void test_count_unknown_squares() {
 
     // add more tests here
 }
-void test_rows_are_different();
+void test_rows_are_different(){
  int board[MAX_SIZE][MAX_SIZE];
+ int row1 = 0 ;
+ int row2 = 1 ;
+
 
     // test case 1
-    string test_board_1[] = {"OOOX",
+    string test_board_3[] = {"OOOX",
                              "OO--",
                              "XX--",
                              "OO--"};
     int size_1 = 4;
-    read_board_from_string(board, test_board_1, size_1);
+    read_board_from_string(board, test_board_3, size_1);
     cout << rows_are_different(board, size_1, row1, row2) << endl;
+cout << "hello world" << endl;
+
+}
+ 
 
 
-// this is just a test to
+

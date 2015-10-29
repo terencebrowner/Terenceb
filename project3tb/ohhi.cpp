@@ -103,7 +103,15 @@ bool cols_are_different(const int board[MAX_SIZE][MAX_SIZE],
 }
 
 bool board_has_no_duplicates(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    // your code here
+    int row1;
+    int row2; 
+    int col1; 
+    int col2;
+        if ((rows_are_different(board, size, row1, row2) == true) &&
+            (cols_are_different(board, size, col1, col2) == true))
+        {
+            return true;
+        }
     return false;
 }
 
@@ -147,7 +155,9 @@ void solve_balance_column(int board[MAX_SIZE][MAX_SIZE],
 ///////////////////////////////////////
 
 bool board_is_solved(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    if (board_has_no_threes(board, size)== true && board_has_no_duplicates(board, size) == true && count_unknocheckwn_squares(board, size) == 0){
+    if (board_has_no_threes(board, size)== true 
+      && board_has_no_duplicates(board, size) == true 
+      && count_unknown_squares(board, size) == 0){
       return true ;
 
     }
@@ -155,12 +165,45 @@ bool board_is_solved(const int board[MAX_SIZE][MAX_SIZE], int size) {
 }
 
 bool check_valid_input(int size, int row_input, char col_input,
-                       char color_char, int &row, int &col)
-int columnInput = atoi(col_input) ;
-                        {
-if (row_input >= 1 && row_input < size &&     
-  return false;
+                       char color_char, int &row, int &col) {
+ string columnLetterInput ;
+ string columnLetters = "ABCDEFGH" ;
+ string columnLettersLowercase = "abcdefh" ;
+ string colorCharInput = "XO-" ;
+  // Is the column input valid              
+  for (int i = 0; i < size; i++) {
+  columnLetterInput.push_back(columnLetters.at(i)) ;
+
+  }
+
+  for (int i = 0; i < size; i++) {
+  columnLetterInput.push_back(columnLettersLowercase.at(i)) ;
+
+  }
+// if not return false
+  if (!columnLetterInput.find(col_input)) {
+  cout << "Cant find Letter " 
+       << columnLetterInput.find(col_input) << endl ; //TURN TO RETURN FALSE
+  }
+
+
+// Is the row input valid
+  if (row_input < 1 or row_input > size) {     
+  return false ;
+  }
+// Is the color input valid
+  if (!color_char == x or o or X or O or -) {
+    return false;
+    cout << " there is a color problem " << endl ;
+  }
+if (columnLetterInput.find(col_input) 
+   && row_input > 1 && row_input < size) {
+  
 }
+  return true ;
+}
+
+
 
 bool check_valid_move(const int original_board[MAX_SIZE][MAX_SIZE],
                       const int current_board[MAX_SIZE][MAX_SIZE],
